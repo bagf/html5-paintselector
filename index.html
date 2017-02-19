@@ -31,8 +31,9 @@
 		}
 		.color-list .color-wrapper {
 			height: 1400px;
-			width: 120px;
+			width: 60px;
 			position: absolute;
+			cursor: pointer;
 		}
 		.color-list .color-wrapper .color-bar {
 			background-color: gray;
@@ -43,43 +44,25 @@
 		}
 		.color-list .color-wrapper .color-bar p {
 			text-align: center;
+			height: 30px;
+			padding: 0;
+			margin: 0;
+		}
+		.color-list .color-wrapper .color-bar p.text {
+			float: left;
+			padding: 0;
+			marign: 0;
+			padding-top: 60px;
+			font-size: 12px;
+			font-weight: bold;
 		}
 		.color-list .color-wrapper .color-bar .color {
 			height: 60px;
 			width: 60px;
 			margin-bottom: 30px;
 		}
-		
-		.color-list .color-wrapper:nth-of-type(1) {
-			transform: rotate(100deg);
-		}
-		
-		.color-list .color-wrapper:nth-of-type(2) {
-			transform: rotate(95deg);
-		}
-		
-		.color-list .color-wrapper:nth-of-type(3) {
-			transform: rotate(90deg);
-		}
-		
-		.color-list .color-wrapper:nth-of-type(4) {
-			transform: rotate(85deg);
-		}
-		
-		.color-list .color-wrapper:nth-of-type(5) {
-			transform: rotate(80deg);
-		}
-		
-		.color-list .color-wrapper:nth-of-type(6) {
-			transform: rotate(75deg);
-		}
-		
-		.color-list .color-wrapper:nth-of-type(7) {
-			transform: rotate(70deg);
-		}
-		
-		.color-list .color-wrapper:nth-of-type(8) {
-			transform: rotate(65deg);
+		.color-wrapper:hover {
+			z-index: 99;
 		}
 		</style>
 		
@@ -111,7 +94,14 @@
 				var $bar = $('<div class="color-bar"><p>Test</p></div>');
 				for (var j = 0; j < 7; j++) {
 					var $color = $('<div class="color"></div>');
-					$color.css("background-color", "rgb("+random()+","+random()+","+random()+")");
+					
+					// Generate colors
+					var red = random();
+					var green = random();
+					var blue = random();
+					
+					$color.css("background-color", "rgb("+red+","+green+","+blue+")");
+					$bar.append('<p class="text">#'+red.toString(16)+''+green.toString(16)+''+blue.toString(16)+'</p>');
 					$bar.append($color);
 				}
 				
