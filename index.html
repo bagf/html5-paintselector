@@ -15,6 +15,9 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 		
 		<style>
+		body {
+			background-color: #EEE;
+		}
 		.container {
 			position: absolute;
 			bottom: 0;
@@ -36,10 +39,10 @@
 			cursor: pointer;
 		}
 		.color-list .color-wrapper .color-bar {
-			background-color: gray;
+			background-color: #CAC9D7;
 			height: 56%;
 			width: 60px;
-			border: 1px solid;
+			border: 1px hidden;
 			border-radius: 15px;
 		}
 		.color-list .color-wrapper .color-bar p {
@@ -64,8 +67,13 @@
 		.color-wrapper:hover {
 			z-index: 99;
 		}
+		.color-wrapper:hover .color-bar {
+			z-index: 99;
+			-webkit-box-shadow: -2px 3px 44px -14px rgba(0,0,0,0.75);
+			-moz-box-shadow: -2px 3px 44px -14px rgba(0,0,0,0.75);
+			box-shadow: -2px 3px 44px -14px rgba(0,0,0,0.75);
+		}
 		</style>
-		
     </head>
     <body>
         <!--[if lt IE 8]>
